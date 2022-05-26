@@ -20,9 +20,9 @@ The basic idea of a function is simple — it's a relationship between a set
 
 ### Introduction: Functions
 
-Take a look at the relationship between variable `x` and function `f` in this example.
+Take a look at the relationship between the variable `x` and function named `f` in the example below.
 
-Function `f` takes the input `x` and spits out a single output ( `f(x)` ).
+Function `f` takes in the input of `x` and returns a single output. Together, it looks like `f(x)`.
 
 Can you guess what this function does to the value of `x`?
 
@@ -42,10 +42,10 @@ Assuming that it's the same function, what is the output of:
 
 In JavaScript, a function can be:
 
-1.  Made up of either a single reusable statement or a group of reusable statements.
-2.  Called from anywhere in the program, which allows for the statements inside a function to not be written over and over again.
+1.  Made up of either a single reusable statement or even a *group* of reusable statements.
+2.  Can be called anywhere in the program, which allows for the statements inside a function to not be written over and over again.
 
-Functions are especially useful because they enable a developer to segment large, unwieldy applications into smaller, more manageable pieces. You might hear this described as making the code modular. Modularity is good.
+Functions are especially useful because they enable a developer to segment large, unwieldy applications into smaller, more manageable pieces. You might hear this described as making the code modular. Modularity is very good and very efficient.
 
 #### Example of using a function
 
@@ -54,33 +54,33 @@ Here's an example of what a function can do:
 This repeats for every additional movie.
 
 ```js
-const movie1 = 'Saving Private Ryan';
-const year1 = 1998;
-console.log(`${movie1} was released in ${year1}`);
+const movie1 = 'Saving Private Ryan'
+const year1 = 1998
+console.log(`${movie1} was released in ${year1}`)
 
-const movie2 = 'Interstellar';
-const year2 = 2014;
-console.log(`${movie2} was released in ${year2}`);
+const movie2 = 'Interstellar'
+const year2 = 2014
+console.log(`${movie2} was released in ${year2}`)
 
-const movie3 = 'Jason Bourne';
-const year3 = 2016;
-console.log(`${movie3} was released in ${year3}`);
+const movie3 = 'Jason Bourne'
+const year3 = 2016
+console.log(`${movie3} was released in ${year3}`)
 ```
 
-![Interstellar](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F12H0jWEKSo0N8c%2Fsource.gif&f=1&nofb=1)
+This is all easy enough to write out, but if we have a lot of movies this results in a lot of repeated code! Also, if we want to change the formatting, we have to change it in every place.
 
-This is all easy enough to write out, but if we have a lot of movies, this results in a lot of repeated code! Also, if we want to change the formatting, we have to change it in every place.
+![Interstellar](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F12H0jWEKSo0N8c%2Fsource.gif&f=1&nofb=1)
 
 Let's try to keep our code from getting out of hand by using a function.
 
 ```js
-const printMovie = (movie, year) => {
-  console.log(`${movie} was released in ${year}`);
-};
+const showMovie = (movie, year) => {
+  console.log(`${movie} was released in ${year}`)
+}
 
-printMovie('Saving Private Ryan', 1998);
-printMovie('Interstellar', 2014);
-printMovie('Jason Bourne', 2016);
+showMovie('Saving Private Ryan', 1998)
+showMovie('Interstellar', 2014)
+showMovie('Jason Bourne', 2016)
 ```
 
 Notice how much cleaner and simpler this function looks than our repeated lines of code?
@@ -91,7 +91,7 @@ Using functions is a great way to save time for yourself, and simplify things fo
 
 #### DRY - Don't repeat yourself
 
-Functions are a critical component of programming because they allow us to execute on a key tenant of engineering:
+Functions are a critical component of programming because they allow us to execute on a key tenant of software engineering:
 
 "**D**on't **R**epeat **Y**ourself" (aka "DRY" code).
 
@@ -99,9 +99,9 @@ Our goal is to craft our programs in as few lines of code as possible, while sti
 
 ##### Why should we avoid repetition?
 
-1.  **Performance -** Having repeated code will lead to longer scripts. Longer scripts take up more memory and will take more time to load, which can make a website seem slow.
+1.  **Performance** - Having repeated code will lead to longer scripts. Longer scripts take up more memory and will take more time to load, which can make a website seem slow.
 
-2.  **Maintainability -** Imagine that we have the same line of code repeated 10 times in our program. If we ever want to change that functionality, we would have to search for all 10 places where that code is repeated and make 10 individual changes.
+2.  **Maintainability** - Imagine that we have the same line of code repeated 10 times in our program. If we ever want to change that functionality, we would have to search for all 10 places where that code is repeated and make 10 individual changes.
 
 #### Why use functions - Summary
 
@@ -115,7 +115,7 @@ Now we know what functions are and why we use them. But how do we create them?
 
 As you saw in our movie example, just as we do with a variable, we must define a function before we call or "use" it.
 
-In JS, functions can be defined in several ways. We will be focusing on using **arrow function expressions**
+In JavaScript, functions can be defined in several ways. We will be focusing on using **arrow function expressions** since that is the modern way of writing them.
 
 #### Function Expressions - Overview
 
@@ -126,24 +126,24 @@ const pickADescriptiveName = () => {
   // code block
 }
 // 'pickADescriptiveName' is the function name
-// the parenthesis and arrow are short hand for the declaration of a function...also known as an arrow function
-// parentheses are needed and can have optional, multiple parameters, or defualt parameters
+// the parenthesis and arrow are short hand for the declaration of a function . . . also known as an arrow function
+// parentheses are needed and can have optional, multiple parameters, or default parameters
 ```
 
 Have you ever tried to move forward to the next page of an online form, only to be greeted by an alert that says "Please fill out all the required fields"?
 
-This kind of code can be placed in a function and this function can be called anytime the user hasn't filled out a field on any form on the site. Let's code for this popup alert using a function expression:
+This kind of code can be placed in a function and this function can be called anytime the user hasn't filled out a field on any form on the site. Let's code for this fake popup alert using a function expression:
 
 ```js
 const errorAlert = () => {
-  alert('Please be sure to fill out all required fields');
+  alert('Please be sure to fill out all required fields')
 }
 ```
 
 Let's take a look at the function in more detail:
 
 1.  The first line begins by declaring a variable called `errorAlert`. This is the name that we can then use to call that function.
-2.  Next, you have a list of parameters surrounded by parentheses.  In a very specific case you can omit the parenthesis, however, we suggest that you include the parentheses as you are gaining familiarity with functions.
+2.  Next, you have a list of parameters surrounded by parentheses.  In very specific cases the parenthesis are optional, however, we suggest that you include the parentheses as you are gaining familiarity with functions.
 3.  The statements inside the function will run every time the function is called. The function body must always be wrapped in curly braces `{ }`, even when it consists of only a single statement. **NOTE** that there is an exception to this rule as well, however, we will still encourage you to always use curly braces as you are getting comfortable with functions.
 
 #### Naming Conventions
@@ -172,14 +172,14 @@ Let's take a quick look at some good and bad examples of function names, and wha
 
 To run the code in a function, we **call**, or invoke, the function by using the function name followed by parentheses.
 
-Remember our function printMovie?
+Remember our function showMovie?
 
-What happens if we just type `printMovie`?
+What happens if we just type `showMovie`?
 
 Now we add the parentheses.
 
 ```js
-printMovie();
+showMovie()
 ```
 
 ### Arguments and Parameters
@@ -190,15 +190,15 @@ printMovie();
 
 Let's write a function that calculates the area of a rectangle.
 
-We need to provide our `area` function with a width and a length so we won't need to create a separate function every time we want to measure the dimensions of a new room.
+We need to provide our `calculateArea` function with a width and a length so we won't need to create a separate function every time we want to measure the dimensions of a new room.
 
 ```js
-const area = (width, length) => {
-  console.log(width * length);
+const calculateArea = (width, length) => {
+  console.log(width * length)
 }
 
-area(5, 3); // 15
-area(12, 16); // 192
+calculateArea(5, 3); // 15
+calculateArea(12, 16); // 192
 
 ```
 
@@ -221,7 +221,7 @@ const greetUser = (firstName, lastName, year, city) => {
 > Check: What would happen if we called the function with the following arguments?
 
 ```js
-greetUser('Bruce', 'Wayne', 1939, 'Gotham');
+greetUser('Bruce', 'Wayne', 1939, 'Gotham')
 ```
 
 ![Batman](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F3xz2BLBOt13X9AgjEA%2Fgiphy.gif&f=1&nofb=1)
@@ -256,8 +256,8 @@ const students = [
   'Sarah',
   'Scott',
   'Tiffany',
-  'Zhe',
-];
+  'Zhe'
+]
 ```
 
 6.  Write a function that takes an array of strings as a parameter and returns an array of numbers corresponding to the lengths of each word.
@@ -293,8 +293,8 @@ Let's look at an example of updating a variable within a function.
 
 ```js
 const doubleValue = (x) => {
-  return x * 2;
-};
+  return x * 2
+}
 ```
 
 The `return` statement _stops the execution of a function_ and returns a value from that function.
@@ -307,28 +307,28 @@ We can then store this returned value in another variable.
 
 #### Exiting a function
 
-We can also use `return;` by itself as a way to stop the function and prevent any code after it from running.
+We can also use `return` by itself as a way to stop the function and prevent any code after it from running.
 
 Take a look at this example:
 
 ```js
 const rockAndRoll = (muted) => {
-  const song = 'Yellow Submarine';
-  const artist = 'The Beatles';
+  const song = 'Yellow Submarine'
+  const artist = 'The Beatles'
 
   if (muted) {
-    return; // Here we use return as a way to exit a function, instead of returning any value
+    return // Here we use return as a way to exit a function, instead of returning any value
   }
 
-  console.log(`Now playing: ${song} by ${artist}`);
+  console.log(`Now playing: ${song} by ${artist}`)
 };
 
-rockAndRoll(true);
+rockAndRoll(true)
 ```
 
 ![Beatles](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2F2kMQxlmpgVGlxSvT23%2Fgiphy.gif%3Fcid%3D3640f6095c5a818659526164635015da&f=1&nofb=1)
 
-Here, we use `return;` as a way to exit the function instead of returning any value.
+Here, we use `return` as a way to exit the function instead of returning any value.
 
 So when we call the function passing in `true` as an argument for `muted`, the log statement will never run.
 
